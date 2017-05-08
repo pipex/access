@@ -24,7 +24,7 @@ function template {
 for tpl in `find ${TEMPLATES} -type f` ;                                                                                                                                                  
 do
     dst=${tpl//${TEMPLATES}/}                                                                                                                                    
-    process $tpl > $dst
+    template $tpl > $dst
 done
 
 # Add the interface uap0 to the main interface as ap
