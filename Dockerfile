@@ -18,7 +18,7 @@ RUN apt-get update && apt-get -q -y install \
 
 ADD rootdir /
 ADD templates /opt/access/templates
-ADD access-start /opt/access/
-RUN chmod 755 /opt/access/access-start
+ADD entrypoint /opt/access/
+RUN chmod 755 /opt/access/entrypoint
 
-ENTRYPOINT ["/opt/access/access-start"]
+ENTRYPOINT ["/opt/access/entrypoint"]
