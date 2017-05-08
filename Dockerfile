@@ -2,7 +2,10 @@ FROM resin/rpi-raspbian:jessie
 
 MAINTAINER Felipe Lalanne <felipe@lalanne.cl>
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
+ENV SSID access
+ENV PASSWORD 12345678
+ENV COUNTRY CL
 
 RUN echo "deb http://archive.raspbian.org/raspbian jessie main contrib non-free" > /etc/apt/sources.list
 
