@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e 
-
 PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TEMPLATES=${TEMPLATES:-"${PWD}/templates"}
 
@@ -14,6 +12,7 @@ function template {
                 RHS="$(eval echo "\"$LHS\"")"
                 line=${line//$LHS/$RHS}
             done
+            echo "$line"
         done
     }
 
@@ -21,9 +20,9 @@ function template {
 }
 
 # For each template in the directory
-for tpl in `find ${TEMPLATES} -type f` ;                                                                                                                                                  
+for tpl in `find ${TEMPLATES} -type f` ;
 do
-    dst=${tpl//${TEMPLATES}/}                                                                                                                                    
+    dst=${tpl//${TEMPLATES}/} 
     template $tpl > $dst
 done
 
