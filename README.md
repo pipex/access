@@ -28,6 +28,6 @@ docker run -ti --net="host" --rm --privileged \
 
 ## TODOs
 
-[] Redirect to captive webportal if wifi is not connected in RPI
-[] Create web interface to quickly select an SSID
-[] If SSID requires captive authentication, redirect client to SSID webportal
+- [ ] Redirect to captive webportal if wifi is not connected in RPI
+- [ ] Create web interface to quickly select an SSID
+- [ ] If SSID requires captive authentication, redirect client to SSID webportal
