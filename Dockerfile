@@ -4,7 +4,7 @@ MAINTAINER Felipe Lalanne <felipe@lalanne.cl>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SSID access
-ENV PASSWORD 12345678
+ENV PASSWD 12345678
 ENV COUNTRY CL
 
 RUN echo "deb http://archive.raspbian.org/raspbian jessie main contrib non-free" > /etc/apt/sources.list
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get -q -y install \
         wpasupplicant \
         && apt-get clean
 
-ADD rootdir /
+ADD root /
 ADD templates /opt/access/templates
 ADD entrypoint /opt/access/
 RUN chmod 755 /opt/access/entrypoint
