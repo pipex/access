@@ -5,7 +5,7 @@ Wireless access point for Raspberry PI. It aims to first to provide a reliable w
 
 The software provides a web interface for configuration, with a captive portal for easy configuration on mobile devices.
 
-# Setup and running 
+## Setup and running 
 
 The software uses docker for easy configuration. To build the docker file just run
 
@@ -24,3 +24,10 @@ docker run -ti --net="host" --rm --privileged \
     -e PASSWD=passwd \
     access
 ```
+
+
+## TODOs
+
+[] Redirect to captive webportal if wifi is not connected in RPI
+[] Create web interface to quickly select an SSID
+[] If SSID requires captive authentication, redirect client to SSID webportal
