@@ -17,9 +17,10 @@ The docker image requires privileged access to run and access to the host networ
 
 ```
 docker run -ti --net="host" --rm --privileged \
-    --name access\
-    -v /etc/network/interfaces:/etc/network/interfaces\
-    -v /etc/hosts:/etc/hosts\
-    -v /etc/wpa_supplicant:/etc/wpa_supplicant\
+    --name access \
+    -v /etc/network/interfaces:/etc/network/interfaces \
+    -v /etc/hosts:/etc/hosts \
+    -e SSID=ssidName \ 
+    -e PASSWD=passwd \
     access
 ```
