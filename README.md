@@ -1,9 +1,7 @@
-Access
+Hostapd
 ======= 
 
-Wireless access point for Raspberry PI. It aims to first to provide a reliable way to reach the Raspbery PI and the Internet wirelessly while at the same allow some protection for the accessing device, specially when navigating on public networks. 
-
-The software provides a web interface for configuration, with a captive portal for easy configuration on mobile devices.
+Hostapd is a dockerizable hostapd access point for the Raspberry PI 3. It uses the [capabilities of the RPI3](http://imti.co/post/145442415333/raspberry-pi-3-wifi-station-ap) wireless card to configure the card both as access point and wlan client
 
 ## Setup and running 
 
@@ -24,10 +22,3 @@ docker run -ti --net="host" --rm --privileged \
     -e PASSWD=passwd \
     access
 ```
-
-
-## TODOs
-
-- [ ] Redirect to captive webportal if wifi is not connected in RPI
-- [ ] Create web interface to quickly select an SSID
-- [ ] If SSID requires captive authentication, redirect client to SSID webportal
