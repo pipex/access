@@ -24,4 +24,4 @@ ADD templates /opt/access/templates
 ADD entrypoint /opt/access/
 RUN chmod 755 /opt/access/entrypoint
 
-ENTRYPOINT ["/opt/access/entrypoint"]
+CMD ["/opt/access/entrypoint"]
