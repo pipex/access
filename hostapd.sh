@@ -1,7 +1,6 @@
 #!/bin/bash
 
-PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-TEMPLATES=${TEMPLATES:-"${PWD}/templates"}
+TPL=${TPL:-"/tpl"}
 
 # Evaluate template with environment variables
 function template {
@@ -19,10 +18,11 @@ function template {
     process < $1 
 }
 
-# For each template in the directory
-for tpl in `find ${TEMPLATES} -type f` ;
+# For each template in the directory, replace 
+# the environment variables
+for tpl in `find ${TPL} -type f` ;
 do
-    dst=${tpl//${TEMPLATES}/} 
+    dst=${tpl//${TPL}/} 
     template $tpl > $dst
 done
 
@@ -41,5 +41,5 @@ iptables -t nat -A POSTROUTING -s 192.168.50.0/24 ! -d 192.168.50.0/24 -j MASQUE
 # Laod interface 
 ifup uap0
 
-# Run hosap
+# Run hostapd
 hostapd /etc/hostapd/hostapd.conf

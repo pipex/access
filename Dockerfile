@@ -19,9 +19,9 @@ RUN apt-get update && apt-get -q -y install \
         wpasupplicant \
         && apt-get clean
 
-ADD root /
-ADD templates /opt/access/templates
-ADD entrypoint /opt/access/
-RUN chmod 755 /opt/access/entrypoint
+ADD etc /etc
+ADD tpl /tpl
+ADD hostapd.sh /
+RUN chmod 755 /hostapd.sh
 
-CMD ["/opt/access/entrypoint"]
+CMD ["/hostapd.sh"]
